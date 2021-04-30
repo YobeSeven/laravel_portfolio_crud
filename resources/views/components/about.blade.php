@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src={{asset('img/profile-img.jpg')}} class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>UI/UX Designer &amp; Web Developer.</h3>
@@ -21,20 +21,20 @@
             @foreach ($abouts as $about)
                 <div class="row">
                     <div class="col-lg-6">
-                    <ul>
-                        <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong>{{$about->naissance}}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>Website:</strong>{{$about->site}}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong>{{$about->numero}}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{$about->ville}}</li>
-                    </ul>
+                        <ul>
+                            <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong>{{$about->naissance}}</li>
+                            <li><i class="icofont-rounded-right"></i> <strong>Website:</strong>{{$about->site}}</li>
+                            <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong>{{$about->numero}}</li>
+                            <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{$about->ville}}</li>
+                        </ul>
                     </div>
                     <div class="col-lg-6">
-                    <ul>
-                        <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>{{$about->age}}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong>{{$about->diplome}}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong>{{$about->email}}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong>{{$about->freelance}}</li>
-                    </ul>
+                        <ul>
+                            <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>{{$about->age}}</li>
+                            <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong>{{$about->diplome}}</li>
+                            <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong>{{$about->email}}</li>
+                            <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong>{{$about->freelance}}</li>
+                        </ul>
                     </div>
                 </div>
             @endforeach
