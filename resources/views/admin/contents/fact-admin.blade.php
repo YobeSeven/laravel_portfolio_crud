@@ -2,7 +2,8 @@
 @include('layouts.flash')
 
 @section('content-admin')
-<h1 class="text-center">FACT</h1>
+    <h1 class="text-center">FACT</h1>
+    
     <table class="table table-bordered table-striped container text-center">
         <thead class="thead-dark">
             <tr>

@@ -2,7 +2,9 @@
 @include('layouts.flash')
 
 @section('content-admin')
-<h1 class="text-center">IMAGE CREATE</h1>
+    <h1 class="text-center">IMAGE CREATE</h1>
+    <a class="btn" href={{route('admin.image')}}>Retour vers IMAGE</a>
+
     <form action="{{route('admin.image.store')}}" enctype="multipart/form-data" method="POST">
         @csrf
         <div>

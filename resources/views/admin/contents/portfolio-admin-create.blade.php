@@ -2,7 +2,9 @@
 @include('layouts.flash')
 
 @section('content-admin')
-<h1 class="text-center">PORTFOLIO CREATE</h1>
+    <h1 class="text-center">PORTFOLIO CREATE</h1>
+    <a class="btn" href={{route('admin.portfolio')}}>Retour vers PORTFOLIO</a>
+
     <div class="container">
         <form action={{route('admin.portfolio.store')}} enctype="multipart/form-data" method="POST">
             @csrf

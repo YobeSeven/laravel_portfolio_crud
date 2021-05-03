@@ -2,7 +2,9 @@
 @include('layouts.flash')
 
 @section('content-admin')
-<h1 class="text-center">FACT EDIT</h1>
+    <h1 class="text-center">FACT EDIT</h1>
+    <a class="btn" href={{route('admin.fact')}}>Retour vers FACT</a>
+
     <div class="container">
         <form action={{route('admin.fact.update',$facts->id)}} method="POST">
             @csrf

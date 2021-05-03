@@ -2,7 +2,9 @@
 @include('layouts.flash')
 
 @section('content-admin')
-<h1 class="text-center">ABOUT CREATE</h1>
+    <h1 class="text-center">ABOUT CREATE</h1>
+    <a class="btn" href={{route('admin.about')}}>Retour vers ABOUT</a>
+    
     <div class="container">
         <form action={{route('admin.about.store')}} method="POST">
             @csrf
