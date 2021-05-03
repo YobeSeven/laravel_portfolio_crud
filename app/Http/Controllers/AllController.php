@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Contact;
 use App\Models\Fact;
+use App\Models\Image;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Skill;
@@ -19,7 +20,8 @@ class AllController extends Controller
         $portfolios = Portfolio::all();
         $facts = Fact::all();
         $services = Service::all();
-        return view('home', compact('abouts','skills','contacts','portfolios','facts','services'));
+        $images = Image::all();
+        return view('home', compact('abouts','skills','contacts','portfolios','facts','services','images'));
     }
 
 

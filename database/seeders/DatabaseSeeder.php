@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             FactSeeder::class,
             ServiceSeeder::class,
+            ImageSeeder::class,
         ]);
     }
 }

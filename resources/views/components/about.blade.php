@@ -10,7 +10,9 @@
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-            <img src={{asset('img/profile-img.jpg')}} class="img-fluid" alt="">
+                @foreach ($images as $image)
+                <img src={{asset('img/' . $image->src)}} class="img-fluid" alt="">
+                @endforeach
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>UI/UX Designer &amp; Web Developer.</h3>
@@ -18,26 +20,28 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua.
             </p>
-            @foreach ($abouts as $about)
+            
                 <div class="row">
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong>{{$about->naissance}}</li>
-                            <li><i class="icofont-rounded-right"></i> <strong>Website:</strong>{{$about->site}}</li>
-                            <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong>{{$about->numero}}</li>
-                            <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{$about->ville}}</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>{{$about->age}}</li>
-                            <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong>{{$about->diplome}}</li>
-                            <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong>{{$about->email}}</li>
-                            <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong>{{$about->freelance}}</li>
-                        </ul>
-                    </div>
+                    @foreach ($abouts as $about)
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong>{{$about->naissance}}</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Website:</strong>{{$about->site}}</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong>{{$about->numero}}</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{$about->ville}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong>{{$about->age}}</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong>{{$about->diplome}}</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Email:</strong>{{$about->email}}</li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong>{{$about->freelance}}</li>
+                            </ul>
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
+            
 
             <p>
                 Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.

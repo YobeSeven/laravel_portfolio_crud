@@ -2,7 +2,7 @@
 @include('layouts.flash')
 
 @section('content-admin')
-    <h1>SHOW ME</h1>
+<h1 class="text-center">PORTFOLIO SHOW</h1>
     <p>{{$portfolios->img}}</p>
     <p>{{$portfolios->filter}}</p>
     <p>{{$portfolios->title}}</p>

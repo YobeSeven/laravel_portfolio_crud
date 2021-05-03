@@ -19,6 +19,9 @@
             <a class="btn btn-primary" href="{{route('admin.contact')}}">Contact</a>
         </li>
         <li>
+            <a class="btn btn-primary" href={{route('admin.image')}}>Image</a>
+        </li>
+        <li>
             <a class="btn btn-primary" href={{route('admin')}}>Admin - index</a>
         </li>
         <li>

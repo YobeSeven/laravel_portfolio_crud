@@ -2,15 +2,16 @@
 @include('layouts.flash')
 
 @section('content-admin')
+<h1 class="text-center">PORTFOLIO CREATE</h1>
     <div class="container">
-        <form action={{route('admin.portfolio.store')}} method="POST">
+        <form action={{route('admin.portfolio.store')}} enctype="multipart/form-data" method="POST">
             @csrf
             <div class="row">
                 <div class="col-1">
                     <label for="img"><strong>Image :</strong></label>
                 </div>
                 <div class="col-1">
-                    <input type="text" name="img" value="{{old("img")}}">
+                    <input type="file" name="img" id="img">
                     @error('img')
                         <span class="text-danger">
                             <strong>{{$message}}</strong>

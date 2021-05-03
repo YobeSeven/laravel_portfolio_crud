@@ -4,9 +4,11 @@ use App\Http\Controllers\AboutsController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FactsController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PortfoliosController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\SkillsController;
+use App\Models\Image;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +52,8 @@ Route::get('/admin/portfolio/create',[PortfoliosController::class, 'create'])->n
 Route::post('admin/portfolio/post',[PortfoliosController::class,'store'])->name('admin.portfolio.store');
         //& POUR SUPPRIMER &//
 Route::delete('/admin/portfolio/{id}/delete',[PortfoliosController::class , 'destroy'])->name('admin.portfolio.delete');
+        //& POUR TELECHARGER &//
+Route::get('admin/portfolio/{id}/download',[PortfoliosController::class, 'download'])->name('admin.portfolio.download');
         //& POUR MONTRER &//
 Route::get('/admin/portfolio/{id}/show',[PortfoliosController::class, 'show'])->name('admin.portfolio.show');
 
@@ -100,3 +104,17 @@ Route::get('/admin/contact/create',[ContactController::class,'create'])->name('a
 Route::post('/admin/contact/store',[ContactController::class,'store'])->name('admin.contact.store');
         //& POUR SUPPRIMER &//
 Route::delete('admin/contact/{id}/delete',[ContactController::class, 'destroy'])->name('admin.contact.delete');
+
+//! ROUTE IMAGE !//
+Route::get('/admin/image',[ImageController::class, 'image'])->name('admin.image');
+    //? METHODE ROUTE ?//
+            //& POUR MODIFIER &//
+Route::get('/admin/image/{id}/edit',[ImageController::class , 'edit'])->name('admin.image.edit');
+Route::put('/admin/image/{id}/update',[ImageController::class , 'update'])->name('admin.image.update');
+        //& POUR AJOUTER &//
+Route::get('/admin/image/create',[ImageController::class, 'create'])->name('admin.image.create');
+Route::post('/admin/image/store',[ImageController::class , 'store'])->name('admin.image.store');
+        //& POUR SUPPRIMER &//
+Route::delete('admin/image/{id}/delete',[ImageController::class , 'destroy'])->name('admin.image.delete');
+        //& POUR TELECHARGER &//
+Route::get('admin/image/{id}/download',[ImageController::class , 'download'])->name('admin.image.download');

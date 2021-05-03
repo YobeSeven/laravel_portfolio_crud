@@ -2,6 +2,7 @@
 @include('layouts.flash')
 
 @section('content-admin')
+<h1 class="text-center">SERVICE EDIT</h1>
     <div class="container">
         <form action={{route('admin.service.update', $services->id)}} method="POST">
             @csrf

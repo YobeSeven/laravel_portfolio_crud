@@ -2,6 +2,7 @@
 @include('layouts.flash')
 
 @section('content-admin')
+<h1 class="text-center">ABOUT EDIT</h1>
     <div class="container">
         <form action={{route('admin.about.update', $abouts->id)}} method="POST">
             @csrf

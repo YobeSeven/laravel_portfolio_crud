@@ -2,8 +2,9 @@
 @include('layouts.flash')
 
 @section('content-admin')
+<h1 class="text-center">PORTFOLIO EDIT</h1>
     <div class="container">
-        <form action={{route('admin.portfolio.update', $portfolios->id)}} method="POST">
+        <form action={{route('admin.portfolio.update', $portfolios->id)}} enctype="multipart/form-data" method="POST">
             @csrf
             @method('PUT')
             <div class="row">
@@ -11,7 +12,7 @@
                     <label for="img"><strong>Image :</strong></label>
                 </div>
                 <div class="col-1">
-                    <input type="text" name="img" value="{{$portfolios->img}}">
+                    <input type="file" name="img" id="img">
                     @error('img')
                         <span class="text-danger">
                             <strong>{{$message}}</strong>
