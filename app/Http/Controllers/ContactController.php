@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    //* READ DANS ADMIN *//
     public function contact(){
         $contacts = Contact::all();
         return view('admin.contents.contact-admin',compact('contacts'));
     }
+    
+    //* MODIFICATION *//
     public function edit(Contact $id){
         $contacts = $id;
         return view('admin.contents.contact-admin-edit',compact('contacts'));
@@ -28,6 +31,8 @@ class ContactController extends Controller
         $contacts->save();
         return redirect()->route('admin.contact')->with("success", "sauvegarde faite");
     }
+
+    //* CREATION *//
     public function create(){
         return view('admin.contents.contact-admin-create');
     }
@@ -45,6 +50,7 @@ class ContactController extends Controller
         return redirect()->route('admin.contact')->with("success", "sauvegarde faite");
     }
 
+    //* SUPPRESSION *//
     public function destroy(Contact $id){
         $id->delete();
         return redirect()->route('admin.about');

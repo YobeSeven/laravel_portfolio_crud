@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Storage;
 
 class PortfoliosController extends Controller
 {
+    //* READ DANS ADMIN *//
     public function portfolio(){
         $portfolios = Portfolio::all();
         return view('admin.contents.portfolio-admin', compact('portfolios'));
     }
 
+    //* MODIFICATION *//
     public function edit(Portfolio $id){
         $portfolios = $id;
         return view('admin.contents.portfolio-admin-edit', compact('portfolios'));
@@ -37,6 +39,7 @@ class PortfoliosController extends Controller
         return redirect()->route('admin.portfolio')->with("success", "sauvegarde faite");
     }
 
+    //* CREATION *//
     public function create(){
         return view('admin.contents.portfolio-admin-create');
     }
@@ -57,16 +60,19 @@ class PortfoliosController extends Controller
         return redirect()->route('admin.portfolio')->with("success", "sauvegarde faite");
     }
 
+    //* SUPPRESSION *//
     public function destroy(Portfolio $id){
         Storage::disk('public')->delete('img/portfolio/'.$id->img);
         $id->delete();
         return redirect()->route('admin.portfolio');
     }
 
+    //* TELECHARGEMENT *//
     public function download(Portfolio $id){
         return Storage::disk('public')->download('img/portfolio/' . $id->img);
     }
 
+    //* SHOW *//
     public function show(Portfolio $id){
         $portfolios = $id;
         return view('admin.contents.portfolio-admin-show', compact('portfolios'));

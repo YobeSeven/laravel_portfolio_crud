@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class FactsController extends Controller
 {
+    //* READ DANS ADMIN *//
     public function fact(){
         $facts = Fact::all();
         return view('admin.contents.fact-admin', compact('facts'));
     }
 
+    //* MODIFICATION *//
     public function edit(Fact $id){
         $facts = $id;
         return view('admin.contents.fact-admin-edit', compact('facts'));
@@ -32,6 +34,8 @@ class FactsController extends Controller
         $facts->save();
         return redirect()->route('admin.fact')->with("success", "sauvegarde faite");
     }
+
+    //* CREATION *//
     public function create(){
         return view('admin.contents.fact-admin-create');
     }
@@ -50,6 +54,8 @@ class FactsController extends Controller
         $fact->save();
         return redirect()->route('admin.fact')->with("success", "sauvegarde faite");
     }
+
+    //* SUPPRESSION *//
     public function destroy(Fact $id){
         $id->delete();
         return redirect()->route('admin.fact');

@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
+    //* READ DANS ADMIN *//
     public function service(){
         $services = Service::all();
         return view('admin.contents.service-admin', compact('services'));
     }
 
+    //* MODIFICATION *//
     public function edit(Service $id){
         $services=$id;
         return view('admin.contents.service-admin-edit', compact('services'));
@@ -30,6 +32,8 @@ class ServicesController extends Controller
         $services->save();
         return redirect()->route('admin.service')->with("success", "sauvegarde faite");
     }
+
+    //* CREATION *//
     public function create(){
         return view('admin.contents.service-admin-create');
     }
@@ -46,6 +50,8 @@ class ServicesController extends Controller
         $service->save();
         return redirect()->route('admin.service')->with("success", "sauvegarde faite");
     }
+
+    //* SUPPRESSION *//
     public function destroy(Service $id){
         $id->delete();
         return redirect()->route('admin.service');

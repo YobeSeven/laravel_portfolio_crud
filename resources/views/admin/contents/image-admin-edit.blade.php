@@ -10,10 +10,10 @@
             <label for="src">Modifier votre image</label>
             <input type="file" name="src" id="src">
             @error('src')
-            <span class="text-danger">
-                <strong>{{$message}}</strong>
-            </span>
-        @enderror
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
         </div>
         <button type="submit">Modifier</button>
     </form>

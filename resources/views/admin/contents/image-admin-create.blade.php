@@ -9,10 +9,10 @@
             <label for="src">Mettez une image</label>
             <input type="file" name="src" id="src">
             @error('src')
-            <span class="text-danger">
-                <strong>{{$message}}</strong>
-            </span>
-        @enderror
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
         </div>
         <input class="btn btn-secondary" type="submit" value="Créez">
         <input class="btn btn-secondary" type="reset" value="Videz">

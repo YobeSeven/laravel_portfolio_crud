@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class AboutsController extends Controller
 {
+    //* READ DANS ADMIN *//
     public function about(){
         $abouts = About::all();
         return view('admin.contents.about-admin', compact('abouts'));
     }
 
+    //* MODIFICATION *//
     public function edit(About $id){
         $abouts = $id;
         return view('admin.contents.about-admin-edit', compact('abouts'));
@@ -41,6 +43,8 @@ class AboutsController extends Controller
         $abouts->save();
         return redirect()->route('admin.about')->with("success", "sauvegarde faite");
     }
+
+    //* CREATION *//
     public function create(){
         return view('admin.contents.about-admin-create');
     }
@@ -69,6 +73,7 @@ class AboutsController extends Controller
         return redirect()->route('admin.about')->with("success", "sauvegarde faite");
     }
     
+    //* SUPPRESSION *//
     public function destroy(About $id){
         $id->delete();
         return redirect()->route('admin.about');
